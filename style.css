@@ -1,0 +1,143 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* THEME VARIABLES */
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1f2933;
+  --accent: #4f46e5;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg), #00000010);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+/* HEADER */
+header {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 900px;
+  padding: 24px 32px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.05);
+}
+
+.icon {
+  position: absolute;
+  font-size: 1.5rem;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.sun {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.moon {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+body.dark .sun {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+body.dark .moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* MAIN */
+main {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+main p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header,
+  main {
+    padding: 24px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+}
