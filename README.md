@@ -14,4 +14,3 @@ A modern, responsive website that allows users to switch between Dark and Light 
 - CSS3 (Variables, Animations)
 - JavaScript (DOM Manipulation, LocalStorage)
 
-## 📂 Folder Structure
